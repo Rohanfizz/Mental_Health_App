@@ -1,68 +1,153 @@
-import { Box, Flex } from "@chakra-ui/react";
-import Question from "./Question";
+import { Box, Flex, Heading } from "@chakra-ui/react";
 import { useState } from "react";
+import { useRouter } from "next/router";
+import Image from "next/image";
 
 const arr = [
-  ["option1", "option2", "option3", "option4"],
-  ["option1", "option2", "option3", "option4"],
-  ["option1", "option2", "option3", "option4"],
-  ["option1", "option2", "option3", "option4"],
-  ["option1", "option2", "option3", "option4"],
-  ["option1", "option2", "option3", "option4"],
-  ["option1", "option2", "option3", "option4"],
-  ["option1", "option2", "option3", "option4"],
-  ["option1", "option2", "option3", "option4"],
-  ["option1", "option2", "option3", "option4"],
-  ["option1", "option2", "option3", "option4"],
-  ["option1", "option2", "option3", "option4"],
+  [
+    { text: "option1", point: 0 },
+    { text: "option2", point: 1 },
+    { text: "option3", point: 2 },
+    { text: "option4", point: 3 },
+  ],
+  [
+    { text: "option1", point: 0 },
+    { text: "option2", point: 1 },
+    { text: "option3", point: 2 },
+    { text: "option4", point: 3 },
+  ],
+  [
+    { text: "option1", point: 0 },
+    { text: "option2", point: 1 },
+    { text: "option3", point: 2 },
+    { text: "option4", point: 3 },
+  ],
+  [
+    { text: "option1", point: 0 },
+    { text: "option2", point: 1 },
+    { text: "option3", point: 2 },
+    { text: "option4", point: 3 },
+  ],
+  [
+    { text: "option1", point: 0 },
+    { text: "option2", point: 1 },
+    { text: "option3", point: 2 },
+    { text: "option4", point: 3 },
+  ],
+  [
+    { text: "option1", point: 0 },
+    { text: "option2", point: 1 },
+    { text: "option3", point: 2 },
+    { text: "option4", point: 3 },
+  ],
+  [
+    { text: "option1", point: 0 },
+    { text: "option2", point: 1 },
+    { text: "option3", point: 2 },
+    { text: "option4", point: 3 },
+  ],
+  [
+    { text: "option1", point: 0 },
+    { text: "option2", point: 1 },
+    { text: "option3", point: 2 },
+    { text: "option4", point: 3 },
+  ],
+  [
+    { text: "option1", point: 0 },
+    { text: "option2", point: 1 },
+    { text: "option3", point: 2 },
+    { text: "option4", point: 3 },
+  ],
+  [
+    { text: "option1", point: 0 },
+    { text: "option2", point: 1 },
+    { text: "option3", point: 2 },
+    { text: "option4", point: 3 },
+  ],
+  [
+    { text: "option1", point: 0 },
+    { text: "option2", point: 1 },
+    { text: "option3", point: 2 },
+    { text: "option4", point: 3 },
+  ],
+  [
+    { text: "option1", point: 0 },
+    { text: "option2", point: 1 },
+    { text: "option3", point: 2 },
+    { text: "option4", point: 3 },
+  ],
+  [
+    {text: "Test completed.Click here to know your score" , point: 0}
+  ]
 ];
 
 const Test = () => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
+  const [currentPoint, setCurrentPoint] = useState(0);
+  const router = useRouter();
 
+  const onClickHandler = (point: any) => {
 
-  const onClickHandler = () => {
-    setCurrentQuestion(currentQuestion+1);
-    console.log(currentQuestion);
-  }
+    setCurrentPoint((p) => p + point);
+    console.log(currentPoint);
+
+    const nextQuestion = currentQuestion + 1;
+    if (nextQuestion < arr.length) {
+      setCurrentQuestion(nextQuestion);
+    } else {
+      alert(currentPoint);
+      router.replace("/home");
+    }
+  };
 
   return (
     <Box
       height="100%"
+      width='100%'
       display="flex"
       justifyContent={"center"}
       alignItems={"center"}
+      flexDirection='column'
+      bgImage='/kids.svg'
+      bgSize={'auto'}
+      bgPosition={'bottom'}
+      bgRepeat={'no-repeat'}
     >
+      <Heading fontFamily={'mono'} fontSize='400%' fontWeight='extrabold' color={'purple.600'}>COMPLETE YOUR ASSESSMENT</Heading>
       <Box
         display="flex"
-        justifyContent='space-around'
+        justifyContent="space-around"
         alignItems={"center"}
-        flexDirection='column'
+        flexDirection="column"
         sx={{
-          width: "70vw",
-          height: "70vh",
+          width: "60vw",
+          height: "80vh",
           bgColor: "rgb(230, 230, 250)",
           boxShadow: "7px 12px rgb(203, 195, 227)",
           borderRadius: "10px",
-          
         }}
       >
-        {arr[currentQuestion].map((option , idx) => (
+        {arr[currentQuestion].map((option, idx) => (
           <Box
-            onClick={onClickHandler}
+            fontFamily={'mono'}
+            fontSize={'200%'}
+            color='purple'
+            onClick={() => onClickHandler(option.point)}
             key={idx}
             sx={{
-              height: "20%",
-              width: "80%",
-              bgColor: 'white',
-              borderRadius: "10px",
+              height: "22%",
+              width: "95%",
+              bgColor: "white",
+              borderRadius: "15px",
               boxShadow: "5px 10px #888888",
-              display: 'flex',
-              justifyContent: 'center',
-              alignItems: 'center',
-              _hover: {bgColor: '#D8BFD8'}
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              _hover: { bgColor: "#D8BFD8" },
             }}
-          >{option}</Box>
+          >
+            {option.text}
+          </Box>
         ))}
       </Box>
     </Box>
