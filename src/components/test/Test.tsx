@@ -1,5 +1,5 @@
 import { Box, Flex } from "@chakra-ui/react";
-import Question from "./Question";
+
 import { useState } from "react";
 
 const arr = [
