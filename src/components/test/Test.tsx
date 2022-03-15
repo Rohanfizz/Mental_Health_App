@@ -1,4 +1,4 @@
-import { Box, Flex } from "@chakra-ui/react";
+import { Box, Flex, Heading } from "@chakra-ui/react";
 import { useState } from "react";
 import { useRouter } from "next/router";
 
@@ -75,6 +75,9 @@ const arr = [
     { text: "option3", point: 2 },
     { text: "option4", point: 3 },
   ],
+  [
+    {text: "Test completed.Click here to know your score" , point: 0}
+  ]
 ];
 
 const Test = () => {
@@ -102,7 +105,9 @@ const Test = () => {
       display="flex"
       justifyContent={"center"}
       alignItems={"center"}
+      flexDirection='column'
     >
+      <Heading fontFamily={'mono'} fontSize='400%' fontWeight='extrabold' color={'purple.600'}>COMPLETE YOUR ASSESSMENT</Heading>
       <Box
         display="flex"
         justifyContent="space-around"
