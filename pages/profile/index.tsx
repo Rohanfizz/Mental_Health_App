@@ -37,7 +37,7 @@ function Profile() {
                 <TestReports />
             </GridItem>
             <GridItem colSpan={1} sx={profileCard}>
-                <RecoveryReport />
+                {/* <RecoveryReport /> */}
             </GridItem>
         </Grid>
     );
