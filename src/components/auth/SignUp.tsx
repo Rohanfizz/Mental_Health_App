@@ -104,7 +104,7 @@ export default function SignUp() {
             backgroundSize: "cover",
             backgroundPosition: "center",
           }}
-        ><Image src='/image.jpeg' alt='Loading...' height='100%' width='100%'/></Grid>
+        ><Image src='/image.jpeg' alt='Loading...' height='80%' width='100%' layout="responsive"/></Grid>
         <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
           <Box
             sx={{
