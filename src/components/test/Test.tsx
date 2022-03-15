@@ -1,6 +1,7 @@
 import { Box, Flex, Heading } from "@chakra-ui/react";
 import { useState } from "react";
 import { useRouter } from "next/router";
+import Image from "next/image";
 
 const arr = [
   [
@@ -102,10 +103,15 @@ const Test = () => {
   return (
     <Box
       height="100%"
+      width='100%'
       display="flex"
       justifyContent={"center"}
       alignItems={"center"}
       flexDirection='column'
+      bgImage='/kids.svg'
+      bgSize={'auto'}
+      bgPosition={'bottom'}
+      bgRepeat={'no-repeat'}
     >
       <Heading fontFamily={'mono'} fontSize='400%' fontWeight='extrabold' color={'purple.600'}>COMPLETE YOUR ASSESSMENT</Heading>
       <Box
@@ -114,8 +120,8 @@ const Test = () => {
         alignItems={"center"}
         flexDirection="column"
         sx={{
-          width: "70vw",
-          height: "70vh",
+          width: "60vw",
+          height: "80vh",
           bgColor: "rgb(230, 230, 250)",
           boxShadow: "7px 12px rgb(203, 195, 227)",
           borderRadius: "10px",
@@ -129,10 +135,10 @@ const Test = () => {
             onClick={() => onClickHandler(option.point)}
             key={idx}
             sx={{
-              height: "20%",
-              width: "80%",
+              height: "22%",
+              width: "95%",
               bgColor: "white",
-              borderRadius: "10px",
+              borderRadius: "15px",
               boxShadow: "5px 10px #888888",
               display: "flex",
               justifyContent: "center",
