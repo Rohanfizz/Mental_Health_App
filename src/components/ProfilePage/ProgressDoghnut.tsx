@@ -22,7 +22,7 @@ const data = {
 
 function ProgressDoghnut() {
     return (
-      <Flex w="100%" h="100%" alignItems="center" justifyContent="flex-start" flexDirection="column" overflowY={"none"}>
+      <Flex w="100%" h="100%" alignItems="center" justifyContent="flex-start" flexDirection="column" >
             <Text fontSize="4xl" fontFamily="mono">
                 Status Report
             </Text>
