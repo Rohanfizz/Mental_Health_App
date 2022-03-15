@@ -31,13 +31,13 @@ function Profile() {
                 <ProfileInfo />
             </GridItem>
             <GridItem colSpan={1} sx={profileCard}>
-                {/* <ProgressDoghnut /> */}
+                <ProgressDoghnut />
             </GridItem>
             <GridItem colSpan={1} sx={profileCard}>
                 <TestReports />
             </GridItem>
             <GridItem colSpan={1} sx={profileCard}>
-                {/* <RecoveryReport /> */}
+                <RecoveryReport />
             </GridItem>
         </Grid>
     );
