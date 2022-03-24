@@ -19,15 +19,6 @@ import {
 import faker from "@faker-js/faker";
 import { Box, Flex, Text } from "@chakra-ui/react";
 
-ChartJS.register(
-    LinearScale,
-    CategoryScale,
-    BarElement,
-    PointElement,
-    LineElement,
-    Legend,
-    Tooltip
-);
 
 export const options = {
     scales: {
@@ -74,6 +65,16 @@ export const data = {
 };
 
 export default function RecoveryReport() {
+  ChartJS.register(
+    LinearScale,
+    CategoryScale,
+    BarElement,
+    PointElement,
+    LineElement,
+    Legend,
+    Tooltip
+);
+
     const printDatasetAtEvent = (dataset: InteractionItem[]) => {
         if (!dataset.length) return;
 
