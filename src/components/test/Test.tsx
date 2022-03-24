@@ -167,7 +167,7 @@ const Test = () => {
       bgPosition={'bottom'}
       bgRepeat={'no-repeat'}
     >
-      <Heading fontFamily={'mono'} fontSize='400%' fontWeight='extrabold' color={'purple.600'}>COMPLETE YOUR ASSESSMENT</Heading>
+      <Heading fontFamily={'mono'} fontSize='300%' fontWeight='extrabold' color={'purple.600'}>COMPLETE YOUR ASSESSMENT</Heading>
       <Box
         display="flex"
         justifyContent="space-around"
@@ -184,7 +184,7 @@ const Test = () => {
         {arr[currentQuestion].map((option, idx) => (
           <Box
             fontFamily={'mono'}
-            fontSize={'200%'}
+            fontSize={'120%'}
             color='purple'
             onClick={() => onClickHandler(option.point)}
             key={idx}
